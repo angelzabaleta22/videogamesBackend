@@ -36,7 +36,7 @@ module.exports = {
 
         getPlatforms()
           .then((data) => Platform.bulkCreate(data)) //El método bulkCreate crea una serie de instancias del modelo Platform en la base de datos y devuelve una promesa.
-          .then((result) => res.send(result)) //La función de devolución de llamada recibe el resultado de la promesa (el resultado de la operación de creación masiva) como argumento y lo pasa como argumento al método send del objeto res. El método send envía la respuesta de la solicitud HTTP actual al cliente que hizo la solicitud.
+          .then((result) => res.send(result)) //La función de devolución de llamada recibe el resultado de la promesa (el resultado de la operación de creación masiva) como argumento y lo pasa como argumento al método send del objeto res. El método send envía la respuesta de la solicitud HTTP actual al cliente que hizo la solicitud. ///////
           .catch((err) => res.status(500).send(err));
       } else {
         res.send(platformsDB);

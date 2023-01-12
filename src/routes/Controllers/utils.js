@@ -7,6 +7,7 @@ function checkIfValidUUID(str) {
 function getIdName(array, subprop = "") {
   // Si no se especifica una propiedad, devolver una nueva matriz en la que cada elemento es un objeto que contiene los valores de los atributos id y name del elemento correspondiente en la matriz original
   if (subprop.length === 0) {
+    //esta función me ayuda a extraer el id y el nombre del genero y plataforma
     return array.map((object) => {
       return {
         id: object.id,
@@ -15,7 +16,7 @@ function getIdName(array, subprop = "") {
     });
   } else {
     return array.map((object) => {
-      // Si se especifica una propiedad, devolver una nueva matriz en la que cada elemento es un objeto que contiene los valores de los atributos id y name de la propiedad especificada del elemento correspondiente en la matriz original
+      // Si se especifica una propiedad, devolver un nuevo arreglo en la que cada elemento es un objeto que contiene los valores de los atributos id y name de la propiedad especificada del elemento correspondiente en la matriz original
       return {
         id: object[subprop].id,
         name: object[subprop].name,

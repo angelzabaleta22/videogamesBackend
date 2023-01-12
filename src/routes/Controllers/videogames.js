@@ -19,6 +19,7 @@ module.exports = {
           where: {
             name: {
               [Op.like]: req.query.name.toLowerCase(), //convierto a minus antes de hacer la comparación
+              //LIKE es un operador de comparación que se utiliza en consultas de bases de datos para buscar patrones en una columna de datos.
             },
           },
           attributes: [

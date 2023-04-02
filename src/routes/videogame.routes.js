@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const videogame = require("./controllers/videogame");
+const videogame = require("./controllers/videogame.js");
 
 router.route("/:idVideogame").get(videogame.get).delete(videogame.delete);
 

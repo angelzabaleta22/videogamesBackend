@@ -3,15 +3,15 @@ const { API } = process.env;
 const axios = require("axios");
 const { Genre } = require("../../db.js");
 
+const URL = process.env.APIURL;
+
 module.exports = {
   async get(req, res) {
     try {
       const genresDB = await Genre.findAll();
 
       if (genresDB.length === 0) {
-        const genresAPI = await axios.get(
-          `https://api.rawg.io/api/genres?key=${API}`
-        );
+        const genresAPI = await axios.get(`${URL}/genres?key=${API}`);
         const results = genresAPI.data.results.map((e) => {
           // Esta es la función anónima que se pasa a map.
           // Se aplica a cada elemento del array y devuelve un objeto con tres propiedades

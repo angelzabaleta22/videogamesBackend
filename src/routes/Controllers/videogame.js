@@ -4,6 +4,8 @@ const axios = require("axios");
 const { Videogame, Genre, Platform } = require("../../db");
 const { checkIfValidUUID, getIdName } = require("./utils");
 
+const URL = process.env.APIURL;
+
 module.exports = {
   //-------------------------------------------GET-------------------------------------------
   async get(req, res) {
@@ -41,7 +43,7 @@ module.exports = {
       try {
         //Si no es un UUID válido, buscar el videojuego en la API externa
         const gameFromApi = await axios.get(
-          `https://api.rawg.io/api/games/${idVideogame}?key=${API}`
+          `${URL}/games/${idVideogame}?key=${API}`
         );
         /* console.log("hola des aquí desde la petición API", gameFromApi); */
         const {

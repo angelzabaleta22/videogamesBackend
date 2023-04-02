@@ -3,12 +3,13 @@ const { API } = process.env;
 const axios = require("axios");
 const { Op } = require("sequelize");
 const { Videogame, Genre, Platform } = require("../../db.js");
+const URL = process.env.APIURL;
 
 module.exports = {
   async get(req, res) {
     let data = [];
     let videogames = [];
-    let url = `https://api.rawg.io/api/games?key=${API}`;
+    let url = `${URL}/games?key=${API}`;
 
     if (req.query.name) {
       // Si la solicitud incluye un parámetro 'name', extraer el valor del parámetro 'name'
@@ -51,7 +52,7 @@ module.exports = {
         });
         // Busca videojuegos en la API de RAWG.io que coincidan con el nombre especificado -->
         const result = await axios.get(
-          `https://api.rawg.io/api/games?search=${name.toLowerCase()}&key=${API}`
+          `${URL}/games?search=${name.toLowerCase()}&key=${API}`
         );
         // Crea un objeto para cada videojuego y guarda la información relevante -->
         result.data.results.forEach((element) => {

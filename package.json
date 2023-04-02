@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "mocha -w ./tests/**/*.spec.js"
+    "test": "mocha -w ./tests/**/*.spec.js",
+    "build": "npm install && npm run-script build-prod",
+    "build-prod": "NODE_ENV=production webpack"
   },
   "author": "Henry",
   "license": "ISC",

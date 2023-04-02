@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "test": "mocha -w ./tests/**/*.spec.js",
-    "build": "npm install && npm run-script build-prod"
+    "build": "npm install"
   },
   "author": "Henry",
   "license": "ISC",

@@ -3,7 +3,6 @@ const { API } = process.env;
 const axios = require("axios");
 const { Videogame, Genre, Platform } = require("../../db");
 const { checkIfValidUUID, getIdName } = require("./utils");
-
 const URL = process.env.APIURL;
 
 module.exports = {

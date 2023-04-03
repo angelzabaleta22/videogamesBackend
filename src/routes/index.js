@@ -4,7 +4,7 @@ const videogame = require("./videogame.routes.js");
 const videogames = require("./videogames.routes.js");
 const genres = require("./genres.routes.js");
 const platforms = require("./platforms.routes.js");
-const error404 = require("./controllers/404");
+const error404 = require("./controllers/404.js");
 // Ejemplo: const authRouter = require('./auth.js');
 
 const router = Router();

@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const platforms = require("./controllers/platforms");
+const platforms = require("./Controllers/platforms");
 
 router.route("/").get(platforms.get);
 

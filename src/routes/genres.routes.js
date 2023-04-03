@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const genres = require("./controllers/genres");
+const genres = require("./Controllers/genres");
 
 router.route("/").get(genres.get);
 
